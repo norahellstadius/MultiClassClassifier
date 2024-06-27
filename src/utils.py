@@ -1,4 +1,5 @@
-import os 
+import os
+
 
 def check_dir(directory: str) -> None:
     """
