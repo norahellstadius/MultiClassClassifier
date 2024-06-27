@@ -6,7 +6,7 @@ Author: Nora Hallqvist
 This repository contains code to train/finetune and evaluate a multiclass classifier with a ResNet50 backbone.
 
 ## Application 
-The classifier is used to distinguish between a set of different types of images
+The classifier is designed to classify images into multiple predefined categories.
 
 ## Setup 
 
@@ -89,16 +89,17 @@ python3 train.py --input_data_dir <INPUT_DATA_DIR> --split_data_dir <SPLIT_DATA_
 ##### Optional Arguments
 
 - `--batch_size`: Batch size (default is 32).
-- `--epochs`: The number of epochs for training (default is 5).
+- `--epochs`: The number of epochs for training (default is 10).
 - `--pixel`: The pixel size of the images (default is 224).
 
-For example, to run the training script with the default batch size (32), pixel size (224), and number of epochs (5), use the following command:
+For example, to run the training script with the default batch size (32), pixel size (224), and number of epochs (10), use the following command:
 
 ```bash 
 python3 train.py --input_data_dir "PATH/TO/DATA" --split_data_dir "PATH/TO/SAVE/SPLIT/DATA"
 ```
 
-After training is complete, the paths where the models are saved will be printed in the terminal. Two models are saved: a preliminary model (pre-model) and another model trained for an additional 3 epochs (post-model).
+After training is complete, the paths where the models are saved will be printed in the terminal. 
+Two models are saved: a preliminary model (pre-model) and another model trained for an additional 3 epochs with more layers allowed to be trained (post-model).
 
 The training loss plot is saved in `plots/train_history.png`. The directory is also printed in the terminal.
 
@@ -118,7 +119,7 @@ python3 test.py --test_dir <TEST_DIR> [--batch_size BATCH_SIZE] [--epochs EPOCHS
 ##### Optional Arguments
 
 - `--batch_size`: Batch size (default is 32).
-- `--epochs`: The number of epochs for training (default is 5).
+- `--epochs`: The number of epochs for training (default is 10).
 - `--pixel`: The pixel size of the images (default is 224).
 
 For example, to run the test script with the default batch size (32) and pixel size (224), use the following command:

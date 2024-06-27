@@ -120,8 +120,6 @@ def create_model(train_set: DirectoryIterator, val_set: DirectoryIterator, class
     for layer in model.layers:
         layer.trainable = False
     
-
-    
     # Add new dense layers
     model.add(Flatten())
     model.add(Dense(256, activation="relu"))
@@ -169,7 +167,7 @@ if __name__ == "__main__":
     parser.add_argument("--split_data_dir", type=str, default="../data", help="Directory where the split data is to be saved")
     parser.add_argument("--pixel", type=int, default=224, help="Pixel dimensions for the input images")
     parser.add_argument("--batch_size", type=int, default=32, help="Batch size for training")
-    parser.add_argument("--epochs", type=int, default=5, help="Number of epochs for training")
+    parser.add_argument("--epochs", type=int, default=10, help="Number of epochs for training")
 
     args = parser.parse_args()
     dir_train, dir_val, dir_test = prepare_data_split(args.input_data_dir, args.split_data_dir)
